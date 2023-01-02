@@ -14,11 +14,11 @@ Below are the minimum number of changes to the default `values.yaml` to run in G
 
     `gitlabUrl: <URL to base GitLab install>`
 
-* Set `runnerRegistrationToken` to value for project, or, more likely, group/subgroup ([~L55](https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/main/values.yaml#L57)):
+* Set `runnerRegistrationToken` for project/group/subgroup ([~L55](https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/main/values.yaml#L57)):
 
     `runnerRegistrationToken: "<runner registration token>"`
 
-* Enable rbac ([~L140](https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/main/values.yaml#L139):
+* Enable rbac ([~L140](https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/main/values.yaml#L139)):
 
        rbac:
          create: true
