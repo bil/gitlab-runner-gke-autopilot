@@ -10,7 +10,7 @@ While most elements work without modification, some Autopilot-specific changes a
 
 Below are the minimum number of changes to the default `values.yaml` to run in GKE Autopilot.
 
-* Set `gitlabUrl`to URL of instance ([~L50](https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/main/values.yaml#L51)):
+* Set `gitlabUrl` to URL of instance ([~L50](https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/main/values.yaml#L51)):
 
     `gitlabUrl: <URL to base GitLab install>`
 
