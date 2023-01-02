@@ -13,12 +13,17 @@ Below are the minimum number of changes to the default `values.yaml` to run in G
 * `gitlabUrl: <URL to base GitLab install>`
 * `runnerRegistrationToken: "<runner registration token>"
 * Enable rbac:
+
        rbac:
          create: true
+
 * Define a node selector to ensure executor lives in a [separate workload](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning#workload_separation) to avoid preempting of the runner pod by jobs or cluster services:
+
        nodeSelector:
            group: autopilot-executor
+
 * Set the corresponding toleration:
+
        tolerations:
          - key: group
            operator: Equal
@@ -28,16 +33,25 @@ Below are the minimum number of changes to the default `values.yaml` to run in G
 ### Recommended changes
 
 * Set runner tag:
+
         tags: <runner tag>
+
 * Diable running untagged:
+
         runUntagged: false
+
 * Increase concurrency. Each 100 jobs consume approximately 0.25 CPU and 0.25 GB RAM.
+
         concurrent: 400
+
 * Set higher runner pod resources:
+
         resources:
           cpu: 1
           memory: 1Gi
+j
 * Provide additional updates to job pods config, run all job pods as [spot VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms):
+
         config: |
           [[runners]]
             [runners.kubernetes]
