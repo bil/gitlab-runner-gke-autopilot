@@ -76,6 +76,7 @@ Below are the minimum number of changes to the default `values.yaml` to run in G
               helper_memory_request_overwrite_max_allowed = "2G"
               helper_ephemeral_storage_request = "5G"
               helper_ephemeral_storage_request_overwrite_max_allowed = "20G"
+              node_selector_overwrite_allowed = ".*"
             [runners.kubernetes.node_selector]
               "cloud.google.com/gke-spot" = "true"
  
